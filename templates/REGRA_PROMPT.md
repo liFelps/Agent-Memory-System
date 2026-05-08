@@ -29,11 +29,11 @@ O agente DEVE manter 3 arquivos de documentação na raiz do projeto. Esses arqu
 
 ### Fluxo obrigatório em TODA sessão
 
-1. **Ao iniciar:** Ler BEST_PRACTICES.md e TROUBLESHOOTING.md antes de escrever qualquer código
-2. **Durante o trabalho:** Após cada alteração com build/deploy, registrar no CHANGELOG.md
-3. **Ao encontrar problema:** Registrar no TROUBLESHOOTING.md assim que resolver
-4. **Ao descobrir padrão:** Adicionar no BEST_PRACTICES.md antes de seguir para a próxima task
-5. **Se os arquivos não existirem:** Criar imediatamente com estrutura básica antes de começar
+1. **Ao iniciar:** Ler `markdown/BEST_PRACTICES.md` e `markdown/TROUBLESHOOTING.md` antes de escrever qualquer código (em monorepo: `frontend/markdown/...`)
+2. **Durante o trabalho:** Após cada alteração com build/deploy, registrar em `markdown/CHANGELOG.md`
+3. **Ao encontrar problema:** Registrar em `markdown/TROUBLESHOOTING.md` assim que resolver
+4. **Ao descobrir padrão:** Adicionar em `markdown/BEST_PRACTICES.md` antes de seguir para a próxima task
+5. **Se a pasta ou os arquivos não existirem:** Criar imediatamente com estrutura básica antes de começar — em monorepo, dentro de `frontend/markdown/`
 
 ### Regras
 
