@@ -19,13 +19,23 @@ Toda sessão de IA começa **do zero**:
 
 ## A solução
 
-3 arquivos vivos na raiz do projeto que o agente **lê antes de codar** e **atualiza após cada entrega**:
+3 arquivos vivos numa pasta `markdown/` dentro do projeto que o agente **lê antes de codar** e **atualiza após cada entrega**:
+
 
 | Arquivo | Função | Analogia |
 |---------|--------|----------|
 | `BEST_PRACTICES.md` | Como as coisas funcionam aqui | Manual do projeto |
 | `TROUBLESHOOTING.md` | O que já deu errado e como resolveu | Prontuário médico |
 | `CHANGELOG.md` | O que já foi feito e quando | Diário de bordo |
+
+### Onde colocar a pasta `markdown/`
+
+| Tipo de projeto | Local da pasta |
+|---|---|
+| Monorepo com frontend e backend separados (ex: `frontend/`, `backend/`) | `frontend/markdown/` |
+| Projeto único (sem subpasta de frontend) | `markdown/` na raiz |
+
+> **Padrão:** quando existe pasta `frontend/`, a memória mora dentro dela — fica perto do código que mais muda e versionada junto com o app entregue ao usuário. Em projeto único, a pasta vai na raiz.
 
 ## O ciclo virtuoso
 
@@ -49,15 +59,21 @@ Sessão N: Agente é praticamente um dev sênior do projeto
 
 ## Como aplicar
 
-### Passo 1 — Copiar os templates
+### Passo 1 — Criar a pasta `markdown/` e copiar os templates
 
-Copie os 3 arquivos da pasta `templates/` para a **raiz do seu projeto**:
+Crie a pasta `markdown/` dentro do projeto e copie os 3 arquivos da pasta `templates/` para dentro dela:
 
-```
-templates/CHANGELOG.md        →  seu-projeto/CHANGELOG.md
-templates/BEST_PRACTICES.md   →  seu-projeto/BEST_PRACTICES.md
-templates/TROUBLESHOOTING.md  →  seu-projeto/TROUBLESHOOTING.md
-```
+\`\`\`
+# Monorepo (com frontend/ separado)
+templates/CHANGELOG.md        →  seu-projeto/frontend/markdown/CHANGELOG.md
+templates/BEST_PRACTICES.md   →  seu-projeto/frontend/markdown/BEST_PRACTICES.md
+templates/TROUBLESHOOTING.md  →  seu-projeto/frontend/markdown/TROUBLESHOOTING.md
+
+# Projeto único (sem frontend/)
+templates/CHANGELOG.md        →  seu-projeto/markdown/CHANGELOG.md
+templates/BEST_PRACTICES.md   →  seu-projeto/markdown/BEST_PRACTICES.md
+templates/TROUBLESHOOTING.md  →  seu-projeto/markdown/TROUBLESHOOTING.md
+\`\`\`
 
 ### Passo 2 — Adicionar a regra no prompt do agente
 
